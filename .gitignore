@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+db.sqlite3
+
+# Virtual Environment
+venv/
+.env
+
+# Node
+node_modules/
+
+# Build files
+dist/
+build/
