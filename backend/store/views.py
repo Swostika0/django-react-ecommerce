@@ -16,7 +16,7 @@ def get_product(request, pk):
         serializer = ProductSerializer(product, context = {'request': request})
         return Response(serializer.data)
     except Product.DoesNotExist:
-        return Response({`error` : `Product not found`}, status = 404)
+        return Response({"error" : "Product not found"}, status = 404)
 
 
     
