@@ -6,7 +6,7 @@ function ProductDetails() {
   const BASEURL = import.meta.env.VITE_DJANGO_BASE_URL;
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [Error, setError] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     fetch(`${BASEURL}/api/products/${id}`)
@@ -41,7 +41,7 @@ function ProductDetails() {
       <div className="bg-white rounded-xl shadow-md p-6 max-w-3xl w-full">
         <div className="flex flex-col md:flex-row gap-8">
           <img
-            src={`${BASEURL}${product.image}`}
+            src={`${product.image}`}
             alt={product.name}
             className="w-full md:w-1/2 h-auto object-cover rounded-lg"
           />
@@ -56,6 +56,14 @@ function ProductDetails() {
             <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
                 Add to cart 🛒
             </button>
+
+            {/*Home Button */}
+            <div className="mt-4">
+                <a href="/"
+                className="text-blue-600 hover:underline">
+                    &larr; Back to Home
+                </a>
+            </div>
           </div>
         </div>
       </div>
